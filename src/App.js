@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import React from 'react';
+import {Board} from './boundary/Boundary'
+import { Tile } from './model/Model';
+import * as config from "./config"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function App() {
+//   return (
+//     <div className="App">
+//       <Board nCol={4} nRow={4} />
+
+//     </div>
+//   );
+// }
+
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = this.parseConfig(config.config_4x4);
+  }
+
+  parseConfig({name, numRows, numColumns, ninjaRow, ninjaColumn, initial}) {
+    let nCol = Number(numColumns), nRow = Number(numRows);
+
+    let tiles = Array(nCol * nRow);
+
+    initial.forEach(({color, row, column}) => tiles[charToNumber(column) + nCol * (Number(row) - 1)] = new Tile(color, false));
+
+    tiles[charToNumber(ninjaColumn) + nCol * (Number(ninjaRow) - 1)] = new Tile("limegreen", true);
+
+    // this.setState({tiles});
+    // console.log("***", this.state);
+    return {nCol, nRow, tiles};
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Board {...this.state} />
+
+      </div>
+    )
+  }
+
+}
+
+function charToNumber(char) {
+  return char.charCodeAt(0) - "A".charCodeAt(0);
+
 }
 
 export default App;

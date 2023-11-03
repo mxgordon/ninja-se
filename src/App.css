@@ -1,38 +1,43 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+#ninja-se {
+  position: relative;
+  width: calc(200% + 10px);
+  height: calc(200% + 10px);
+  z-index: 1;
+  background-image: url("/src/ninja-se.png");
+  background-size: contain;
+  border-radius: 10px;
+}
+
 .App {
   text-align: center;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid {
+  background-color: lightgray;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  aspect-ratio: 1/1;
+  max-height: calc(100% - 2 * 100px);
+  border-radius: 16px;
+  margin: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grid-box {
+  background-color: white;
+  display: block;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
