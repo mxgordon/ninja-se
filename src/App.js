@@ -1,5 +1,5 @@
 import React from 'react';
-import {Board} from './boundary/Boundary'
+import {Board, Controls} from './boundary/Boundary'
 import { Tile } from './model/Model';
 import * as config from "./config"
 import './App.css';
@@ -29,8 +29,6 @@ class App extends React.Component {
 
     tiles[charToNumber(ninjaColumn) + nCol * (Number(ninjaRow) - 1)] = new Tile("limegreen", true);
 
-    // this.setState({tiles});
-    // console.log("***", this.state);
     return {nCol, nRow, tiles};
   }
 
@@ -38,7 +36,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Board {...this.state} />
-
+        <Controls />
       </div>
     )
   }

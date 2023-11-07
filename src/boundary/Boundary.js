@@ -1,4 +1,5 @@
 import React from 'react';
+import { directions } from '../model/Model';
 
 export class Board extends React.Component {
     // constructor({nCol, nRow, tiles}) {
@@ -21,7 +22,32 @@ export class Board extends React.Component {
 }
 
 export class Controls extends React.Component {
-
+    render() {
+        return (
+            <div className="controls">
+                <div className="reset-div"></div>
+                <div className="moving-div">
+                    <div className="btn-row">
+                        <div className="up-button" onClick={() => this.props.moveHandler(directions.UP)}>
+                            <span>UP</span>
+                        </div>
+                        <div className="right-button" onClick={() => this.props.moveHandler(directions.RIGHT)}>
+                            <span>RIGHT</span>
+                        </div>
+                    </div>
+                    <div className="btn-row">
+                        <div className="left-button" onClick={() => this.props.moveHandler(directions.LEFT)}>
+                            <span>LEFT</span>
+                        </div>
+                        <div className="down-button" onClick={() => this.props.moveHandler(directions.DOWN)}>
+                            <span>DOWN</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="remove-div"></div>
+            </div>
+        )
+    }
 
 }
 
