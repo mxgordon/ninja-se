@@ -2,20 +2,11 @@ import React from 'react';
 import { directions } from '../model/Model';
 
 export class Board extends React.Component {
-    // constructor({nCol, nRow, tiles}) {
-    //     super();
-
-    //     this.nCol = nCol;
-    //     this.nRow = nRow;
-    //     this.tiles = tiles;
-
-    // }
-
     render() {
         console.log(this.props);
         return (
-            <div className='grid' style={{gridTemplateColumns: `repeat(${this.props.nCol}, 1fr)`, gridTemplateRows: `repeat(${this.props.nRow}, 1fr)`}}>
-                {[...Array(this.props.nCol * this.props.nRow).keys()].map(i => (<TileElement {...this.props.tiles[i]} />))}
+            <div className='grid' style={{gridTemplateColumns: `repeat(${this.props.nCols}, 1fr)`, gridTemplateRows: `repeat(${this.props.nRows}, 1fr)`}}>
+                {[...Array(this.props.nCols * this.props.nRows).keys()].map(i => (<TileElement {...this.props.tiles[i]}/>))}
             </div>
         )
     }

@@ -1,7 +1,8 @@
 export class Tile {
-    constructor(color, isNinjaSe) {
+    constructor(color, isNinjaSe, key) {
         this.color = color;
         this.isNinjaSe = isNinjaSe;
+        this.key = key;
     }
 }
 
