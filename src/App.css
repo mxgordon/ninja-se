@@ -8,7 +8,7 @@ html, body, #root {
   width: calc(200% + 10px);
   height: calc(200% + 10px);
   z-index: 1;
-  background-image: url("/src/ninja-se.png");
+  background-image: url("/src/boundary/ninja-se.png");
   background-size: contain;
   border-radius: 10px;
 }
