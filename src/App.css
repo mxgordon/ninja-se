@@ -30,9 +30,9 @@ html, body, #root {
   gap: 10px;
   padding: 10px;
   aspect-ratio: 1/1;
-  max-height: calc(100% - 2 * 15vh);
+  width: 55vh;
   border-radius: 16px;
-  margin: 15vh;
+  margin: auto 10vh;
   flex: 1;
 }
 
@@ -53,7 +53,7 @@ html, body, #root {
 }
 
 .controls > div:nth-child(2n + 1) { 
-  height: 30%;
+  height: 20%;
 }
 
 div[class*="button"] {
@@ -81,17 +81,57 @@ div[class*="button"] > span {
   transform: rotate(-45deg);
 }
 
-div[class*="button"]:hover {
-  background-color: lightblue;
+div[class*="button"]:hover, .btn:hover {
+  background-color: lightblue !important;
 }
 
 
-div[class*="button"]:active {
-  background-color: lightgreen;
+div[class*="button"]:active, .btn:active {
+  background-color: lightgreen !important;
 }
 
 .moving-div {  
   height: 40%;
   max-width: fit-content;
   transform: rotate(45deg) translateY(5%) translateX(5%);
+}
+
+div.btns {
+  display: flex;
+  margin: 80px 0 0;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: lightgray;
+  color: black;
+  border-radius: 16px;  
+  margin: 16px;
+  transition: 0.1s;
+}
+
+div.btns .rst-btn.btn {
+  background-color: lightcoral;
+}
+
+p {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.rmv-btn.btn {
+  margin: 20px !important;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  background-color: white;
+  border-radius: 24px;
+  z-index: 10;
+  padding: 30px;
+  box-shadow: 6px 6px 6px gray;
 }
